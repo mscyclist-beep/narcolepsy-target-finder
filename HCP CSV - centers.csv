@@ -1,0 +1,19 @@
+Center_ID,Center_Name,Facility_System,State,County,City,ZIP,AASM_Accredited,Treats_Narcolepsy,Regional_Sleep_Program,Sleep_Apnea_Heavy,Public_URL,Hub_Flag,Outlier_Flag,Hub_Name
+C001,Williamson Health Sleep Center,Williamson Health,Tennessee,Williamson,Franklin,37067,TRUE,TRUE,TRUE,FALSE,https://williamsonhealth.org/sleep/,,,
+C002,Vanderbilt Sleep Disorders Center Franklin,Vanderbilt,Tennessee,Williamson,Franklin,37067,TRUE,TRUE,TRUE,FALSE,https://www.vanderbilthealth.com/locations/vanderbilt-sleep-disorders-center-franklin-0,TRUE,FALSE,Franklin/Brentwood Hub
+C003,VERSAL Sleep Medicine Cool Springs,VERSAL,Tennessee,Williamson,Franklin,37067,TRUE,TRUE,FALSE,FALSE,https://versalprohealth.com/sleep-medicine-cool-springs/,TRUE,FALSE,Franklin/Brentwood Hub
+C004,Sleep Medicine Associates - Franklin,Independent,Tennessee,Williamson,Franklin,37067,FALSE,TRUE,FALSE,FALSE,https://sleepmedicineassociatesnashville.com/,TRUE,FALSE,Franklin/Brentwood Hub
+C005,Sleep Centers of Middle Tennessee - Cool Springs,Sleep Centers of Middle TN,Tennessee,Williamson,Franklin,37067,TRUE,TRUE,TRUE,FALSE,https://sleepcenterinfo.com/,TRUE,FALSE,Franklin/Brentwood Hub
+C006,Ascension Saint Thomas Midtown Center for Sleep,Ascension Saint Thomas,Tennessee,Davidson,Nashville,37203,TRUE,TRUE,TRUE,FALSE,https://healthcare.ascension.org/locations/tennessee/tnnas/nashville-ascension-saint-thomas-hospital-midtown,,,
+C007,Vanderbilt Sleep Disorders Center - Nashville,Vanderbilt,Tennessee,Davidson,Nashville,37232,TRUE,TRUE,TRUE,FALSE,https://www.vanderbilthealth.com/service-line/sleep-disorders-center,,,
+C008,TriStar NorthCrest Sleep Disorders,TriStar Health,Tennessee,Robertson,Springfield,37172,FALSE,TRUE,FALSE,FALSE,https://www.tristarhealth.com/locations/tristar-northcrest-medical-center/specialties/sleep-disorders,,,
+C009,CommonSpirit Memorial Hospital Sleep Lab - Hixson,CommonSpirit,Tennessee,Hamilton,Hixson,37343,TRUE,FALSE,FALSE,TRUE,https://www.commonspirit.org/find-a-location/commonspirit-memorial-hospital-sleep-lab-hixson-3587,,,
+C010,US Sleep Clinics - Generic Apnea Lab (Example),US Sleep Clinics,Tennessee,Rutherford,Murfreesboro,37129,FALSE,FALSE,FALSE,TRUE,https://www.ussleepclinics.com/locations/tennessee,,,
+C011,Norton Sleep Health Institute,Norton Healthcare,Kentucky,Jefferson,Louisville,40202,TRUE,TRUE,TRUE,FALSE,https://nortonhealthcare.com,,,
+C012,Baptist Health Sleep Center - Louisville,Baptist Health,Kentucky,Jefferson,Louisville,40207,TRUE,TRUE,TRUE,FALSE,https://www.baptisthealth.com,,,
+C013,UofL Health Sleep Disorders Center,UofL Health,Kentucky,Jefferson,Louisville,40202,TRUE,TRUE,TRUE,FALSE,https://uoflhealth.org,,,
+C014,Generic CPAP-Only Sleep Lab - Louisville,Independent,Kentucky,Jefferson,Louisville,40214,FALSE,FALSE,FALSE,TRUE,https://example.com,,,
+C015,IU Health Sleep Disorders Center,IU Health,Indiana,Marion,Indianapolis,46202,TRUE,TRUE,TRUE,FALSE,https://iuhealth.org,,,
+C016,Ascension St. Vincent Sleep Center,Ascension St. Vincent,Indiana,Marion,Indianapolis,46260,TRUE,TRUE,TRUE,FALSE,https://healthcare.ascension.org,,,
+C017,Community Health Network Sleep Center,Community Health Network,Indiana,Marion,Indianapolis,46219,TRUE,FALSE,FALSE,TRUE,https://ecommunity.com,,,
+C050,Placeholder Columbia Sleep Center,,Tennessee,Maury,Columbia,38401,,,,,,FALSE,TRUE,Franklin/Brentwood Hub

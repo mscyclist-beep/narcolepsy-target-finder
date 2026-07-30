@@ -1,0 +1,25 @@
+HCP_ID,HCP_Name,Credentials,Specialty,Center_ID,Center_Name,State,County,City,ZIP,Treats_Narcolepsy,Sleep_Apnea_Heavy,Sunshine_Total_Sponsorship_Dollars,Sunshine_Total_Sponsorship_Events,,Hub_Flag,Outlier_Flag,Hub_Name
+H001,Martha Hagaman,MD,Sleep Medicine,C004,Sleep Medicine Associates - Franklin,Tennessee,Williamson,Franklin,37067,TRUE,FALSE,8500,6,,TRUE,FALSE,Franklin/Brentwood Hub
+H002,Karl Kuhn,MD,Sleep Medicine,C001,Williamson Health Sleep Center,Tennessee,Williamson,Franklin,37067,TRUE,FALSE,4200,3,,TRUE,FALSE,Franklin/Brentwood Hub
+H003,Aaron Milstone,MD,Sleep Medicine,C001,Williamson Health Sleep Center,Tennessee,Williamson,Franklin,37067,TRUE,FALSE,3100,2,,TRUE,FALSE,Franklin/Brentwood Hub
+H004,Jordan Phillips,MD,Sleep Medicine,C001,Williamson Health Sleep Center,Tennessee,Williamson,Franklin,37067,TRUE,FALSE,0,0,,TRUE,FALSE,Franklin/Brentwood Hub
+H005,Oscar Mendez,MD,Sleep Medicine,C001,Williamson Health Sleep Center,Tennessee,Williamson,Franklin,37067,TRUE,FALSE,1200,1,,TRUE,FALSE,Franklin/Brentwood Hub
+H006,Beth Malow,MD,Neurology / Sleep,C002,Vanderbilt Sleep Disorders Center Franklin,Tennessee,Williamson,Franklin,37067,TRUE,FALSE,15000,10,,TRUE,FALSE,Franklin/Brentwood Hub
+H007,Pablo Saez,MD,Pulmonary / Sleep,C003,VERSAL Sleep Medicine Cool Springs,Tennessee,Williamson,Franklin,37067,TRUE,FALSE,2500,2,,TRUE,FALSE,Franklin/Brentwood Hub
+H008,Emily Carter,NP,Sleep Medicine,C005,Sleep Centers of Middle Tennessee - Cool Springs,Tennessee,Williamson,Franklin,37067,TRUE,FALSE,0,0,,TRUE,FALSE,Franklin/Brentwood Hub
+H009,David Chen,MD,Sleep Medicine,C006,Ascension Saint Thomas Midtown Center for Sleep,Tennessee,Davidson,Nashville,37203,TRUE,FALSE,6000,4,,,,
+H010,Alex Turner,DO,Pulmonary / Sleep,C007,Vanderbilt Sleep Disorders Center - Nashville,Tennessee,Davidson,Nashville,37232,TRUE,FALSE,9000,5,,,,
+H011,Grace Nolan,PA,Sleep Medicine,C008,TriStar NorthCrest Sleep Disorders,Tennessee,Robertson,Springfield,37172,TRUE,FALSE,0,0,,,,
+H012,Randy Foster,MD,Pulmonary,C009,CommonSpirit Memorial Hospital Sleep Lab - Hixson,Tennessee,Hamilton,Hixson,37343,FALSE,TRUE,500,1,,,,
+H013,Sam Waller,MD,Pulmonary,C010,US Sleep Clinics - Generic Apnea Lab (Example),Tennessee,Rutherford,Murfreesboro,37129,FALSE,TRUE,0,0,,,,
+H014,Laura Kim,MD,Sleep Medicine,C011,Norton Sleep Health Institute,Kentucky,Jefferson,Louisville,40202,TRUE,FALSE,7200,5,,,,
+H015,Michael Osei,DO,Neurology / Sleep,C012,Baptist Health Sleep Center - Louisville,Kentucky,Jefferson,Louisville,40207,TRUE,FALSE,3300,3,,,,
+H016,Priya Nair,MD,Sleep Medicine,C013,UofL Health Sleep Disorders Center,Kentucky,Jefferson,Louisville,40202,TRUE,FALSE,11000,7,,,,
+H017,Tom Becker,NP,Sleep Medicine,C013,UofL Health Sleep Disorders Center,Kentucky,Jefferson,Louisville,40202,TRUE,FALSE,0,0,,,,
+H018,Carl Jennings,MD,Pulmonary,C014,Generic CPAP-Only Sleep Lab - Louisville,Kentucky,Jefferson,Louisville,40214,FALSE,TRUE,0,0,,,,
+H019,Angela Brooks,MD,Sleep Medicine,C015,IU Health Sleep Disorders Center,Indiana,Marion,Indianapolis,46202,TRUE,FALSE,9800,6,,,,
+H020,Brian Osei,DO,Neurology / Sleep,C016,Ascension St. Vincent Sleep Center,Indiana,Marion,Indianapolis,46260,TRUE,FALSE,4400,3,,,,
+H021,Nina Alvarez,MD,Pulmonary / Sleep,C016,Ascension St. Vincent Sleep Center,Indiana,Marion,Indianapolis,46260,TRUE,FALSE,0,0,,,,
+H022,Chris Doyle,PA,Sleep Medicine,C015,IU Health Sleep Disorders Center,Indiana,Marion,Indianapolis,46202,TRUE,FALSE,0,0,,,,
+H023,Derek Owens,MD,Pulmonary,C017,Community Health Network Sleep Center,Indiana,Marion,Indianapolis,46219,FALSE,TRUE,0,0,,,,
+H050,Placeholder Columbia HCP,MD,Sleep Medicine,C020,Placeholder Columbia Sleep Center,Tennessee,maury,Columbia,38401,,,,,,FALSE,TRUE,Franklin/Brentwood Hub
