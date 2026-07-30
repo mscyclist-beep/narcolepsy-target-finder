@@ -5,7 +5,23 @@ st.set_page_config(page_title="Narcolepsy NT1 Target Finder - TN, KY, IN", layou
 
 st.title("Narcolepsy NT1 Target Finder")
 st.caption("Tennessee, Kentucky, Indiana — public-data-based territory targeting")
+# Let the user pick a state and county
+state_options = sorted(counties["State"].unique())
+selected_state = st.selectbox("Select state", state_options)
 
+county_options = sorted(
+    counties.loc[counties["State"] == selected_state, "County"].unique()
+)
+selected_county = st.selectbox("Select county", county_options)
+
+# Show population and NT1 estimate for that county
+selected_county_data = counties[
+    (counties["State"] == selected_state) &
+    (counties["County"] == selected_county)
+]
+
+st.write("County population and NT1 estimate:")
+st.write(selected_county_data[["Population", "NT1_Est"]])
 ALLOWED_TN_COUNTIES = [
     "Williamson", "Davidson", "Rutherford", "Robertson",
     "Hamilton"  # Hamilton kept only if within allowed launch footprint; adjust as needed
@@ -16,12 +32,13 @@ def load_data():
     try:
         centers = pd.read_csv("centers.csv")
         hcps = pd.read_csv("hcps.csv")
+        counties = pd.read_csv("Counties Narcolepsy - TN_KY_IN.csv")
     except FileNotFoundError:
         st.error("centers.csv and hcps.csv must be in the same folder as app.py")
         st.stop()
-    return centers, hcps
+    return centers, hcps, counties
 
-centers, hcps = load_data()
+centers, hcps, counties = load_data()
 
 # Apply geography rule: only TN/KY/IN, and TN restricted to allowed counties
 def apply_geo_filter(df):
@@ -150,3 +167,4 @@ if generate:
             st.write("None found for this county.")
 else:
     st.info("Select State, County, and Practice Type in the sidebar, then click Generate Targets.")
+    
