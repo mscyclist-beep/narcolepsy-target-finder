@@ -112,7 +112,7 @@ hcps["HCP_Score"] = hcps.apply(hcp_score, axis=1)
 st.sidebar.header("Territory Selection")
 state_list = state_options
 selected_state = st.sidebar.selectbox("State", state_list)
-county_options = county_options
+unique
 selected_county = st.sidebar.selectbox("County", county_options)
 practice_options = ["All Non-Apnea", "Sleep Medicine", "Neurology / Sleep", "Pulmonary / Sleep", "Apnea-Heavy (Asteroid Group)"]
 selected_practice = st.sidebar.selectbox("Practice Type", practice_options)
