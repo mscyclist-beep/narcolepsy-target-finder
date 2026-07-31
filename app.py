@@ -198,3 +198,107 @@ with st.expander("How these estimates and scores were calculated", expanded=True
 - **Practice Type** filters providers by specialty (for example, Sleep Medicine or Neurology).
 - **HCP scores** rank providers using factors like specialty, role, and center affiliation.
     """)
+with st.expander("How this Narcolepsy NT1 Target Finder works", expanded=True):
+    st.markdown("""
+### 1. What this tool shows
+
+- This tool helps you find **sleep centers and clinicians** in Tennessee, Kentucky, and Indiana who are likely to diagnose and treat **narcolepsy type 1 (NT1)**.
+- You pick a **State**, **County**, and **Practice Type** on the left.
+- The app then shows:
+  - The **county population**
+  - The **estimated number of NT1 patients in that county**
+  - **Ranked sleep centers** and **ranked HCPs** for that territory
+
+### 2. Where the county numbers come from
+
+- We load a file called **"Counties Narcolepsy - TN_KY_IN.csv"**.
+- For each county, this file includes:
+  - County name
+  - State (Tennessee, Kentucky, or Indiana)
+  - Population (from public census-style data)
+  - An NT1 estimate (NT1_Est)
+
+### 3. How we estimate NT1 patients (NT1_Est)
+
+- NT1_Est is our **estimated number of NT1 patients** in that county.
+- We use this simple formula:
+
+  NT1_Est = Population × 0.0126%
+
+- The 0.0126% number comes from published research that found about **0.0126% of people have NT1** (about 1 person out of every 7,900 people in the population).
+- These are **planning estimates**, not actual diagnosed patient counts.
+
+### 4. How the State and County dropdowns work
+
+- The **State** dropdown is built from all distinct states in the county file (Tennessee, Kentucky, Indiana).
+- Once you pick a state, the **County** dropdown only shows counties in that state from the same file.
+- This means:
+  - If you pick Tennessee, you only see Tennessee counties.
+  - If you pick Kentucky, you only see Kentucky counties.
+  - If you pick Indiana, you only see Indiana counties.
+
+### 5. Practice Type categories
+
+- Practice Type lets you filter by the **type of practice**:
+  - **All Non-Apnea** – Sleep Medicine, Neurology / Sleep, and selected Pulmonology / Sleep
+  - **Sleep Medicine** – practices focused on sleep across many conditions
+  - **Neurology / Sleep** – neurologists with a sleep focus
+  - **Pulmonary / Sleep** – pulmonology-based sleep practices
+  - **Apnea-Heavy (Asteroid Group)** – centers that are mostly apnea-focused, with limited public narcolepsy focus
+- These categories help us **prioritize narcolepsy-focused work**, but they do **not** automatically exclude any clinician from the data.
+
+### 6. What makes a site or HCP "narcolepsy-relevant"
+
+- We give more weight to:
+  - **Sleep Medicine** and **Neurology / Sleep** clinicians
+  - Centers that perform **overnight sleep studies (PSG)** and **Multiple Sleep Latency Tests (MSLT)**, which are standard tests used to diagnose narcolepsy
+  - Centers and clinicians that list **hypersomnia or narcolepsy** as a focus
+- We do **not** penalize high apnea volume:
+  - A site can do a lot of apnea studies and still score high if it also does PSG + MSLT and sees hypersomnia/narcolepsy patients.
+
+### 7. Training and credentials
+
+- We only include clinicians with these credentials:
+  - **MD**, **DO**, **PA**, **NP**
+- If we know that a clinician has:
+  - A **sleep fellowship**
+  - Or **board certification in Sleep Medicine**
+- Then we may give them a **small score bonus**, but this is a **nice-to-have**:
+  - It does **not** automatically qualify or disqualify anyone.
+
+### 8. Sunshine / Open Payments and speaker fees
+
+- We include only **non-meal, non–food and beverage** payments when we look at engagement:
+  - Examples: consulting, speaking, CME, grants, education.
+- These payments are used as a **light weight** in scores to reflect real-world engagement.
+- We do **not** use speaker fees as a strict filter:
+  - They can adjust the rank slightly.
+  - They do not remove someone from the list.
+
+### 9. How to read the outputs
+
+- **County population and NT1 estimate**:
+  - Population = total people in that county.
+  - NT1_Est = estimated NT1 patients in that county using the 0.0126% rate.
+- **Top Sleep Centers** table:
+  - Shows centers in the selected state and county.
+  - Sorted by an internal "Center Score" that reflects:
+    - Practice type
+    - PSG + MSLT capability
+    - Hypersomnia / narcolepsy focus
+    - Credentials and accreditation
+- **Top HCPs** table:
+  - Shows clinicians in that territory.
+  - Sorted by "HCP Score", which combines:
+    - Specialty and practice type
+    - Narcolepsy / hypersomnia signals
+    - Training and engagement signals
+
+### 10. Important reminder
+
+- This tool is meant to **support planning and targeting**.
+- It does **not** replace:
+  - Clinical judgment
+  - Local field insights
+  - Final medical decision making
+    """)
