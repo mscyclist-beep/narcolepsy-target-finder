@@ -1,28 +1,22 @@
 import pandas as pd
 import streamlit as st
 
-st.set_page_config(page_title="Narcolepsy NT1 Target Finder - TN, KY, IN", layout="wide")
+st.set_page_config(page_title="Narcolepsy NT1 Target Finder – TN, KY, IN", layout="wide")
 
 st.title("Narcolepsy NT1 Target Finder")
-st.caption("Tennessee, Kentucky, Indiana — public-data-based territory targeting")
-# Let the user pick a state and county
-state_options = sorted(counties["State"].unique())
-selected_state = st.selectbox("Select state", state_options)
-# Load TN, KY, IN counties with population and NT1 estimates
-counties = pd.read_csv("Counties Narcolepsy - TN_KY_IN.csv")
-# Load TN, KY, IN counties with population and NT1 estimates
-counties = pd.read_csv("Counties Narcolepsy - TN_KY_IN.csv")
+st.caption("Tennessee, Kentucky, Indiana – public-data-based territory targeting")
 
-# Limit to Tennessee, Kentucky, and Indiana only
+# Load TN, KY, IN counties with population and NT1 estimates
+
+# Load TN, KY, IN counties with population and NT1 estimates
+counties = pd.read_csv("Counties Narcolepsy - TN_KY_IN.csv")# Limit to Tennessee, Kentucky, and Indiana only
 counties = counties[counties["State"].isin(["Tennessee", "Kentucky", "Indiana"])]
 
 # Let the user pick a state and county
 state_options = sorted(counties["State"].unique())
 selected_state = st.selectbox("Select state", state_options)
 
-county_options = sorted(
-    counties.loc[counties["State"] == selected_state, "County"].unique()
-)
+county_options = sorted(counties[counties["State"] == selected_state]["County"].unique())
 selected_county = st.selectbox("Select county", county_options)
 
 # Show population and NT1 estimate for that county
@@ -30,6 +24,9 @@ selected_county_data = counties[
     (counties["State"] == selected_state) &
     (counties["County"] == selected_county)
 ]
+
+st.write("County population and NT1 estimate:")
+st.write(selected_county_data[["Population", "NT1_Est"]])
 
 st.write("County population and NT1 estimate:")
 st.write(selected_county_data[["Population", "NT1_Est"]])
