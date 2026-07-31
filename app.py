@@ -189,3 +189,12 @@ if generate:
 else:
     st.info("Select State, County, and Practice Type in the sidebar, then click Generate Targets.")
     
+with st.expander("How these estimates and scores were calculated", expanded=True):
+    st.markdown("""
+- **Population** comes from publicly available county-level census data.
+- **NT1_Est** = Population × 0.0126%.
+  - 0.0126% is a published estimate of NT1 prevalence in the US population.
+- These estimates are for planning only and do not represent diagnosed patients.
+- **Practice Type** filters providers by specialty (for example, Sleep Medicine or Neurology).
+- **HCP scores** rank providers using factors like specialty, role, and center affiliation.
+    """)
