@@ -50,18 +50,7 @@ selected_county_data = counties[
 
 st.write("County population and NT1 estimate:")
 st.write("County population and NT1 estimate:")
-st.write(selected_county_data[["Population", "NT1_Est"]])
-    counties.loc[counties["State"] == selected_state, "County"].unique()
-)
-selected_county = st.selectbox("Select county", county_options)
 
-# Show population and NT1 estimate for that county
-selected_county_data = counties[
-    (counties["State"] == selected_state) &
-    (counties["County"] == selected_county)
-]
-
-st.write("County population and NT1 estimate:")
 st.write(selected_county_data[["Population", "NT1_Est"]])
 ALLOWED_TN_COUNTIES = [
     "Williamson", "Davidson", "Rutherford", "Robertson",
