@@ -90,7 +90,41 @@ def center_score(row):
 centers["Center_Score"] = centers.apply(center_score, axis=1)
 
 center_score_map = centers.set_index("Center_ID")["Center_Score"].to_dict()
+def center_narcolepsy_score(row):
+    score = 0
 
+    # Core narcolepsy signals
+    if row.get("Treats_Narcolepsy", False):
+        score += 3
+
+    # Practice type weighting
+    if row.get("Practice_Type") == "Sleep Medicine":
+        score += 3
+    elif row.get("Practice_Type") == "Neurology / Sleep":
+        score += 2
+    elif row.get("Practice_Type") == "Pulmonary / Sleep":
+        score += 1
+
+    # PSG / MSLT capability (if these columns exist in your centers data)
+    if row.get("Does_PSG", False):
+        score += 1
+    if row.get("Does_MSLT", False):
+        score += 2
+
+    # Hypersomnia / narcolepsy focus flag
+    if row.get("Hypersomnia_Focus", False) or row.get("Narcolepsy_Focus", False):
+        score += 1
+
+    # Sleep fellowship / board certification at the center level (if tracked)
+    if row.get("Has_Sleep_Fellowship_Staff", False) or row.get("Has_Sleep_Boarded_Staff", False):
+        score += 1
+
+    # Important: we do NOT subtract points for apnea-heavy volume here
+    # Apnea volume is not used as a negative in this narcolepsy-focused score.
+
+    return score
+
+centers["Narcolepsy_Score"] = centers.apply(center_narcolepsy_score, axis=1)
 def sponsorship_score(events):
     if events >= 5: return 2
     if events >= 1: return 1
