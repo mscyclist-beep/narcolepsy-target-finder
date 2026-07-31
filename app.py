@@ -30,7 +30,8 @@ selected_county_data = counties[
 ]
 
 st.write("County population and NT1 estimate:")
-st.write(selected_county_data[["Population", "NT1_Est"]])county_options = sorted(
+st.write("County population and NT1 estimate:")
+st.write(selected_county_data[["Population", "NT1_Est"]])
     counties.loc[counties["State"] == selected_state, "County"].unique()
 )
 selected_county = st.selectbox("Select county", county_options)
