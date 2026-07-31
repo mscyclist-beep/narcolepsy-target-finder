@@ -110,21 +110,21 @@ def center_narcolepsy_score(row):
         score += 1
     if row.get("Does_MSLT", False):
         score += 2
-
-    # Hypersomnia / narcolepsy focus flag
-    if row.get("Hypersomnia_Focus", False) or row.get("Narcolepsy_Focus", False):
-        score += 1
+state_list = state_options    # Hypersomnia / narcolepsy focus flag
+   sidebar_state = st.sidebar.selectbox("State", state_list)
+      sidebar_county_options = sorted(
+sidebar_county = st.sidebar.selectbox("County", sidebar_county_options)
+)
 
     # Sleep fellowship / board certification at the center level (if tracked)
     if row.get("Has_Sleep_Fellowship_Staff", False) or row.get("Has_Sleep_Boarded_Staff", False):
         score += 1
 
-    # Important: we do NOT subtract points for apnea-heavy volume here
-    # Apnea volume is not used as a negative in this narcolepsy-focused score.
-
-    return score
-
-centers["Narcolepsy_Score"] = centers.apply(center_narcolepsy_score, axis=1)
+   c_filtered = centers[
+    (centers["State"] == sidebar_state) &
+    (centers["County"] == sidebar_county) &
+    (centers["Asteroid"] == False)
+].sort_values("Narcolepsy_Score", ascending=False)
 def sponsorship_score(events):
     if events >= 5: return 2
     if events >= 1: return 1
