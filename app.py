@@ -1,6 +1,14 @@
 import pandas as pd
 import streamlit as st
+# Let the user pick a state
+state_options = sorted(counties["State"].unique())
+selected_state = st.selectbox("State", state_options)
 
+# Let the user pick a county within that state
+county_options = sorted(
+    counties.loc[counties["State"] == selected_state, "County"].unique()
+)
+selected_county = st.selectbox("County", county_options)
 st.set_page_config(page_title="Narcolepsy NT1 Target Finder – TN, KY, IN", layout="wide")
 
 st.title("Narcolepsy NT1 Target Finder")
