@@ -139,28 +139,50 @@ def hcp_score(row):
 
 hcps["HCP_Score"] = hcps.apply(hcp_score, axis=1)
 
-# Sidebar
-st.sidebar.header("Territory Selection")
-state_list = state_options
-sidebar_state = st.sidebar.selectbox("State", state_list)
-sidebar_county = st.sidebar.selectbox("County", county_options)
-practice_options = [
-    "All Non-Apnea",
-    "Sleep Medicine",
-    "Neurology / Sleep",
-    "Pulmonary / Sleep",
-    "Apnea-Heavy (Asteroid Group)",
-]
-selected_practice = st.sidebar.selectbox("Practice Type", practice_options)
-generate = st.sidebar.button("Generate Targets")if generate:
-    c_filtered = centers[
-        (centers["State"] == selected_state) &
-        (centers["County"] == selected_county) &
-        (centers["Asteroid"] == False)
-    ].sort_values("Center_Score", ascending=False)
-
-    st.subheader("Top Sleep Centers — Narcolepsy NT1 Focus")
-    if not c_filtered.empty:
+142  # Sidebar
+143  st.sidebar.header("Territory Selection")
+144  state_list = state_options
+145  sidebar_state = st.sidebar.selectbox("State", state_list)
+146  sidebar_county = st.sidebar.selectbox("County", county_options)
+147  practice_options = [
+148      "All Non-Apnea",
+149      "Sleep Medicine",
+150      "Neurology / Sleep",
+151      "Pulmonary / Sleep",
+152      "Apnea-Heavy (Asteroid Group)",
+153  ]
+154  selected_practice = st.sidebar.selectbox("Practice Type", practice_options)
+155  generate = st.sidebar.button("Generate Targets")
+156  
+157  if generate:
+158      selected_state = sidebar_state
+159      selected_county = sidebar_county
+160      c_filtered = centers[
+161          (centers["State"] == selected_state) &
+162          (centers["County"] == selected_county) &
+163          (centers["Asteroid"] == False)
+164      ].sort_values("Center_Score", ascending=False)
+165  
+166      st.subheader("Top Sleep Centers – Narcolepsy NT1 Focus")
+167      if not c_filtered.empty:
+168          st.dataframe(
+169              c_filtered[[
+170                  "Center_Name",
+171                  "Facility_System",
+172                  "City",
+173                  "County",
+174                  "State",
+175                  "ZIP",
+176                  "AASM_Accredited",
+177                  "Treats_Narcolepsy",
+178                  "Regional_Sleep_Program",
+179                  "Center_Score",
+180              ]],
+181              use_container_width=True,
+182              hide_index=True,
+183          )
+184      else:
+185          st.warning("No qualifying sleep centers found for this county.")
         st.dataframe(
             c_filtered[["Center_Name","Facility_System","City","County","State","ZIP",
                         "AASM_Accredited","Treats_Narcolepsy","Regional_Sleep_Program","Center_Score"]],
