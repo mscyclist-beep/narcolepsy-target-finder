@@ -102,18 +102,20 @@ def center_narcolepsy_score(row):
     elif row.get("Practice_Type") == "Pulmonary / Sleep":
         score += 1
 
-    # PSG / MSLT capability (if these columns exist in your centers data)
-    if row.get("Does_PSG", False):
-        score += 1
-    if row.get("Does_MSLT", False):
-        score += 2
-state_list = state_options    # Hypersomnia / narcolepsy focus flag
-sidebar_state = st.sidebar.selectbox("State", state_list)
-sidebar_county_options = sorted(
-sidebar_county = st.sidebar.selectbox("County", sidebar_county_options)
-)
-
-    # Sleep fellowship / board certification at the center level (if tracked)
+    105 def hcp_score(row):
+106     score = 0
+107     # ... your earlier scoring rules here ...
+108     # PSG / MSLT capability (if these columns exist in your centers data)
+109     if row.get("Does_PSG", False):
+110         score += 1
+111     if row.get("Does_MSLT", False):
+112         score += 2
+113
+114     # Sleep fellowship / board certification at the center level (if tracked)
+115     if row.get("Has_Sleep_Fellowship_Staff", False) or row.get("Has_Sleep_Boarded_Staff", False):
+116         score += 1
+117
+118     return score# Sleep fellowship / board certification at the center level (if tracked)
     if row.get("Has_Sleep_Fellowship_Staff", False) or row.get("Has_Sleep_Boarded_Staff", False):
         score += 1
 
