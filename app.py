@@ -7,23 +7,22 @@ st.title("Narcolepsy NT1 Target Finder")
 st.caption("Tennessee, Kentucky, Indiana – public-data-based territory targeting")
 
 # Load TN, KY, IN counties with population and NT1 estimates
-
 # Load TN, KY, IN counties with population and NT1 estimates
-counties = pd.read_csv("Counties Narcolepsy - TN_KY_IN.csv")# Limit to Tennessee, Kentucky, and Indiana only
+counties = pd.read_csv("Counties Narcolepsy - TN_KY_IN.csv")
 counties = counties[counties["State"].isin(["Tennessee", "Kentucky", "Indiana"])]
 
 # Let the user pick a state and county
-# Let the user pick a state and county
 state_options = sorted(counties["State"].unique())
 county_options = []  # placeholder; sidebar handles actual selection
+
 # Show population and NT1 estimate for that county
 selected_county_data = counties[
     (counties["State"] == sidebar_state) &
     (counties["County"] == sidebar_county)
-
-
+]
 
 st.write("County population and NT1 estimate:")
+st.write(selected_county_data[["Population", "NT1_Est"]])
 st.write(selected_county_data[["Population", "NT1_Est"]])
 
 st.write("County population and NT1 estimate:")
