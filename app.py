@@ -142,17 +142,17 @@ hcps["HCP_Score"] = hcps.apply(hcp_score, axis=1)
 # Sidebar
 st.sidebar.header("Territory Selection")
 state_list = state_options
-selected_state = st.sidebar.selectbox("State", state_list)
-county_options = sorted(
-    counties[counties["State"] == selected_state]["County"].unique()
-)
-selected_county = st.sidebar.selectbox("County", county_options)
-practice_options = ["All Non-Apnea", "Sleep Medicine", "Neurology / Sleep", "Pulmonary / Sleep", "Apnea-Heavy (Asteroid Group)"]
+sidebar_state = st.sidebar.selectbox("State", state_list)
+sidebar_county = st.sidebar.selectbox("County", county_options)
+practice_options = [
+    "All Non-Apnea",
+    "Sleep Medicine",
+    "Neurology / Sleep",
+    "Pulmonary / Sleep",
+    "Apnea-Heavy (Asteroid Group)",
+]
 selected_practice = st.sidebar.selectbox("Practice Type", practice_options)
-
-generate = st.sidebar.button("Generate Targets")
-
-if generate:
+generate = st.sidebar.button("Generate Targets")if generate:
     c_filtered = centers[
         (centers["State"] == selected_state) &
         (centers["County"] == selected_county) &
