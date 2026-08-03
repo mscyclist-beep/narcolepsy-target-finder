@@ -102,7 +102,7 @@ def center_narcolepsy_score(row):
     elif row.get("Practice_Type") == "Pulmonary / Sleep":
         score += 1
 
-    105 105 def hcp_score(row):
+    def hcp_score(row):
 106     score = 0
 107     # (all your scoring rules, each starting with 4 spaces)
 108     # ...
