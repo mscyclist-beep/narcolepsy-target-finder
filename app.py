@@ -13,11 +13,9 @@ counties = pd.read_csv("Counties Narcolepsy - TN_KY_IN.csv")# Limit to Tennessee
 counties = counties[counties["State"].isin(["Tennessee", "Kentucky", "Indiana"])]
 
 # Let the user pick a state and county
-
-
+# Let the user pick a state and county
 state_options = sorted(counties["State"].unique())
 county_options = []  # placeholder; sidebar handles actual selection
-
 # Show population and NT1 estimate for that county
 selected_county_data = counties[
     (counties["State"] == sidebar_state) &
