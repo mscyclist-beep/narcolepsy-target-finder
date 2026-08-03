@@ -108,8 +108,8 @@ def center_narcolepsy_score(row):
     if row.get("Does_MSLT", False):
         score += 2
 state_list = state_options    # Hypersomnia / narcolepsy focus flag
-   sidebar_state = st.sidebar.selectbox("State", state_list)
-      sidebar_county_options = sorted(
+sidebar_state = st.sidebar.selectbox("State", state_list)
+sidebar_county_options = sorted(
 sidebar_county = st.sidebar.selectbox("County", sidebar_county_options)
 )
 
